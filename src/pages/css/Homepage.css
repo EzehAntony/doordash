@@ -1,0 +1,199 @@
+.homepage {
+  background-color: black;
+  min-height: 100vh;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero {
+  height: 85vh;
+  max-height: 580px;
+  width: 100%;
+  background: url("/public/background.jpg");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo p {
+  margin: 0 0 0 10px;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 20px;
+}
+
+header {
+  background-color: transparent;
+  width: 100%;
+  height: 80px;
+  line-height: 50px;
+  position: absolute;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav {
+  position: absolute;
+  right: 20px;
+}
+
+.nav button {
+  background-color: transparent;
+  border: 0;
+  margin: 0;
+  padding: 10px 20px;
+  color: white;
+  font-weight: 700;
+}
+
+.nav button:nth-of-type(2) {
+  background-color: white;
+  color: black;
+  border-radius: 50px;
+}
+
+.hero h1 {
+  font-size: 50px;
+  text-align: center;
+  font-weight: 800;
+  max-width: 700px;
+}
+
+.hero input {
+  border-radius: 50px;
+  width: 350px;
+  height: 50px;
+  margin: 20px 0;
+  border: 0;
+  outline: none;
+  padding: 0 20px;
+}
+
+.hero a {
+  color: white;
+  margin: 20px 0 0 0;
+  font-weight: 600;
+}
+
+.second {
+  min-height: 600px;
+  width: 100%;
+  background-color: white;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 0 5%;
+}
+
+.second > div {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: black;
+}
+
+.second > div p {
+  font-weight: 500;
+  margin: 20px 0;
+  font-size: 16px;
+  max-width: 300px;
+}
+
+.second button {
+  background-color: transparent;
+  margin: 0;
+  outline: 0;
+  border: 0;
+  cursor: pointer;
+  color: #ff431e;
+  font-weight: 700;
+  font-size: 15px;
+}
+
+.second .iphone img {
+  width: 35%;
+}
+
+.third {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  height: 50vh;
+  background-color: white;
+  color: black;
+  padding: 0 5%;
+}
+
+.third > .text {
+  max-width: 400px;
+}
+
+.third > .text h1 {
+  font-size: 40px;
+  max-width: 290px;
+}
+.third > .text p {
+  font-size: 15px;
+  margin: 20px 0;
+}
+.third > .text button {
+  font-size: 15px;
+  background-color: #eb1700;
+  font-weight: 700;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 50px;
+}
+
+.third > .image {
+  width: 60%;
+} 
+
+.third img {
+  width: 100%;
+}
+@media (max-width: 800px) {
+  .second {
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .second img {
+    width: 20%;
+  }
+
+  .second > div {
+    width: 60%;
+    flex-direction: row;
+    text-align: left;
+    margin: 20px 0;
+  }
+
+  .second > div p {
+    font-size: 20px;
+  }
+
+  .second > div > .text {
+    margin: 0 0 0 20px;
+  }
+}
