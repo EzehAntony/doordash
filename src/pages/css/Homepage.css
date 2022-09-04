@@ -8,6 +8,10 @@
   align-items: center;
 }
 
+img {
+  user-select: none;
+}
+
 .hero {
   height: 85vh;
   max-height: 580px;
@@ -138,7 +142,6 @@ header {
   justify-content: space-around;
   align-items: center;
   width: 100%;
-  height: 50vh;
   background-color: white;
   color: black;
   padding: 0 5%;
@@ -167,10 +170,88 @@ header {
 
 .third > .image {
   width: 60%;
-} 
+  display: flex;
+  justify-content: flex-end;
+}
 
 .third img {
   width: 100%;
+  max-width: 600px;
+  margin-bottom: -30px;
+  z-index: 2;
+}
+
+.last {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  background-color: #fff0ed;
+  color: black;
+  padding: 5%;
+}
+
+.last > .image {
+  width: 60%;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.last > .text {
+  max-width: 400px;
+}
+
+.last > .text h1 {
+  font-size: 40px;
+  max-width: 290px;
+}
+.last > .text p {
+  font-size: 15px;
+  margin: 20px 0;
+}
+.last > .text button {
+  font-size: 15px;
+  background-color: #eb1700;
+  font-weight: 700;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 50px;
+}
+
+.last img {
+  width: 100%;
+  max-width: 600px;
+}
+
+footer {
+  min-height: 50vh;
+  background-color: #191919;
+  width: 100%;
+  padding: 20px 5%;
+  display: flex;
+  flex-direction: column;
+}
+
+footer .up,
+footer .down {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+footer .up .topCities {
+  object-fit: contain;
+}
+
+footer h1 {
+  font-size: 18px;
+}
+
+footer li {
+  list-style-type: none;
+  font-size: 13px;
+  margin: 5px 0;
 }
 @media (max-width: 800px) {
   .second {
@@ -186,7 +267,11 @@ header {
     width: 60%;
     flex-direction: row;
     text-align: left;
-    margin: 20px 0;
+    margin: 50px 0;
+  }
+
+  .second img {
+    width: 30%;
   }
 
   .second > div p {
@@ -195,5 +280,38 @@ header {
 
   .second > div > .text {
     margin: 0 0 0 20px;
+  }
+
+  .third {
+    flex-direction: column-reverse;
+  }
+
+  .third .image {
+    width: 100%;
+  }
+  .third img {
+    margin: 20px 0;
+    width: 100%;
+  }
+
+  .third .text {
+    max-width: unset;
+    margin: 20px 0;
+  }
+  .last {
+    flex-direction: column-reverse;
+  }
+
+  .last .image {
+    width: 100%;
+  }
+  .last img {
+    margin: 20px 0;
+    width: 100%;
+  }
+
+  .last .text {
+    max-width: unset;
+    margin: 20px 0;
   }
 }

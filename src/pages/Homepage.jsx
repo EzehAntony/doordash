@@ -1,9 +1,25 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import "./css/Homepage.css";
+import gsap from "gsap";
 
 function Homepage() {
+  let homepage = useRef("");
+
+  useEffect(() => {
+    console.log(homepage.current);
+    
+  }, []);
+
+  /* gsap */
+  useEffect(() => {
+    gsap.from(homepage.current, {
+      x: -50,
+      duration: 0.8,
+    });
+  }, []);
+
   return (
-    <div className="homepage">
+    <div className="homepage" ref={homepage}>
       <div className="hero">
         <header>
           <div className="logo">
@@ -75,6 +91,72 @@ function Homepage() {
           <img src="soup.png" alt="" />
         </div>
       </div>
+
+      <div className="last">
+        <div className="text">
+          <h1>Every Flavor Welcome</h1>
+          <p>
+            From your neighborhood sushi spot to the burger and fries you crave,
+            choose from over 300,000 local and national favorites across the
+            U.S., Canada and Australia.
+          </p>
+          <button>Find restaurants</button>
+        </div>
+
+        <div className="image">
+          <img src="soup.png" alt="" />
+        </div>
+      </div>
+
+      <footer>
+        <div className="up">
+          <div className="topCities">
+            <h1>Top Cities Near You</h1>
+            <li>New York City</li>
+            <li>Los Angeles</li>
+            <li>Toronto</li>
+            <li>Houston</li>
+            <li>Brooklyn</li>
+            <li>San Diego</li>
+            <li>Las vegas</li>
+            <li>San Francisco</li>
+            <li>Seattle</li>
+            <li>Atlanta</li>
+            <li>Queens</li>
+            <li>Vancouver, BC</li>
+            <li>Miami</li>
+            <li>San Antonio</li>
+            <li>Phonix</li>
+            <li>Denver</li>
+            <li>Austin</li>
+            <li>Washington, DC</li>
+            <li>Dallas</li>
+            <li>Melbourne</li>
+            <li>Sydney</li>
+            <li>Montreal</li>
+            <li>All Cities</li>
+          </div>
+          <div className="cuisines">
+            <h1>Top Cuisines Near You</h1>
+            <li>Pizza Near Me</li>
+            <li>Chinese Food Near Me</li>
+            <li>Sushi Near Me</li>
+            <li>Cafe Near Me</li>
+            <li>Lunch Near Me</li>
+            <li>Seafood Near Me</li>
+            <li>Indian Food Near Me</li>
+            <li>Dessert Near Me</li>
+            <li>Burgers Near Me</li>
+            <li>Asian Food Near Me</li>
+            <li>Italian Food Near Me</li>
+            <li>Vegan Food Near Me</li>
+            <li>Sandwishes Near Me</li>
+            <li>Restaurant Near Me</li>
+          </div>
+        </div>
+
+        <div className="down"></div>
+      </footer>
     </div>
   );
 }
