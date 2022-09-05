@@ -1,10 +1,12 @@
 .homepage {
+  width: 100%;
   min-height: 100vh;
   color: white;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
 }
 
 img {
@@ -105,7 +107,7 @@ header {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  margin: 0 5%;
+  padding: 0 5%;
 }
 
 .second > div {
@@ -259,15 +261,16 @@ footer li {
 
 @media (max-width: 800px) {
   .hero {
-    max-height: 450px;
+    max-height: 590px;
   }
 
-  .hero header {
+  .hero header .logo {
     display: none;
   }
 
   .mobile {
     display: block;
+    margin: 20px 0;
   }
 
   .hero h1 {
@@ -281,6 +284,7 @@ footer li {
   }
 
   .second {
+    width: 100%;
     flex-direction: column;
     justify-content: space-between;
   }
@@ -306,6 +310,7 @@ footer li {
 
   .second > div > .text {
     margin: 0 0 0 20px;
+    width: 50%;
   }
 
   .third {

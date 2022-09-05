@@ -136,6 +136,7 @@ function Homepage() {
           end: "bottom 70%",
         },
       })
+      
       .from(q(".last .text"), {
         x: 40,
         delay: 0.2,
@@ -151,11 +152,12 @@ function Homepage() {
     gsap.from(q("footer"), {
       y: 40,
       duration: 1,
+      opacity: 0,
       scrollTrigger: {
         trigger: q("footer"),
         start: "top 80%",
         end: "top 50%",
-        scrub: 1
+        scrub: 1,
       },
     });
   }, []);
