@@ -1,5 +1,4 @@
 .homepage {
-  background-color: black;
   min-height: 100vh;
   color: white;
   display: flex;
@@ -10,6 +9,10 @@
 
 img {
   user-select: none;
+}
+
+.mobile {
+  display: none;
 }
 
 .hero {
@@ -253,7 +256,30 @@ footer li {
   font-size: 13px;
   margin: 5px 0;
 }
+
 @media (max-width: 800px) {
+  .hero {
+    max-height: 450px;
+  }
+
+  .hero header {
+    display: none;
+  }
+
+  .mobile {
+    display: block;
+  }
+
+  .hero h1 {
+    font-size: 30px;
+    margin: 0 5%;
+  }
+
+  .hero input {
+    width: 50%;
+    height: 40px;
+  }
+
   .second {
     flex-direction: column;
     justify-content: space-between;
@@ -264,7 +290,7 @@ footer li {
   }
 
   .second > div {
-    width: 60%;
+    width: 100%;
     flex-direction: row;
     text-align: left;
     margin: 50px 0;

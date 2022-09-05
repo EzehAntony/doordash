@@ -1,20 +1,162 @@
 import React, { useEffect, useRef } from "react";
 import "./css/Homepage.css";
-import gsap from "gsap";
+import gsap, { TimelineMax } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 function Homepage() {
+  gsap.registerPlugin(ScrollTrigger);
   let homepage = useRef("");
+  const q = gsap.utils.selector(homepage);
 
-  useEffect(() => {
-    console.log(homepage.current);
-    
-  }, []);
+  const heroTimeline = new TimelineMax({
+    duration: 1,
+  });
+  const secondTimeline = new TimelineMax({
+    duration: 0.8,
+  });
+  const thirdTimeline = new TimelineMax({
+    duration: 0.6,
+  });
+  const lastTimeline = new TimelineMax({
+    duration: 1,
+    delay: 0.2,
+  });
 
   /* gsap */
   useEffect(() => {
-    gsap.from(homepage.current, {
-      x: -50,
-      duration: 0.8,
+    heroTimeline
+      .from(q(".hero"), {
+        y: -50,
+        opacity: 0,
+      })
+      .from(
+        q("header"),
+        {
+          y: -50,
+          opacity: 0,
+        },
+        "<0.2"
+      )
+      .from(
+        q(".mobile"),
+        {
+          y: -20,
+          opacity: 0,
+        },
+        "<0.2"
+      )
+      .from(
+        q(".hero h1"),
+        {
+          y: 20,
+          opacity: 0,
+        },
+        "<0.2"
+      )
+      .from(
+        q(".hero input"),
+        {
+          x: -20,
+          opacity: 0,
+        },
+        "<0.2"
+      )
+      .from(
+        q(".hero a"),
+        {
+          y: -20,
+          opacity: 0,
+        },
+        "<0.2"
+      );
+
+    secondTimeline
+      .from(q(".scoot"), {
+        y: -50,
+        opacity: 0,
+        scrollTrigger: {
+          trigger: q(".second .scoot"),
+          start: "top 80%",
+          scrub: 1,
+          end: "bottom 70%",
+        },
+      })
+      .from(q(".shop"), {
+        y: 50,
+        opacity: 0,
+        scrollTrigger: {
+          trigger: q(".second .shop"),
+          start: "top 80%",
+          scrub: 1,
+          end: "bottom 70%",
+        },
+      })
+      .from(q(".iphone"), {
+        y: -50,
+        opacity: 0,
+        scrollTrigger: {
+          trigger: q(".second .iphone"),
+          start: "top 80%",
+          scrub: 1,
+          end: "bottom 70%",
+        },
+      });
+
+    thirdTimeline
+      .from(q(".third img"), {
+        x: 40,
+        opacity: 0,
+        scrollTrigger: {
+          trigger: q(".third img"),
+          start: "top 80%",
+          scrub: 0.5,
+          end: "bottom 70%",
+        },
+      })
+      .from(q(".third .text"), {
+        x: -40,
+        delay: 0.2,
+        opacity: 0,
+        delay: 20,
+        scrollTrigger: {
+          trigger: q(".third img"),
+          start: "top 75%",
+          scrub: 0.5,
+        },
+      });
+
+    lastTimeline
+      .from(q(".last img"), {
+        x: -40,
+        opacity: 0,
+        scrollTrigger: {
+          trigger: q(".last img"),
+          start: "top 80%",
+          scrub: 0.5,
+          end: "bottom 70%",
+        },
+      })
+      .from(q(".last .text"), {
+        x: 40,
+        delay: 0.2,
+        opacity: 0,
+        delay: 20,
+        scrollTrigger: {
+          trigger: q(".last img"),
+          start: "top 75%",
+          scrub: 0.5,
+        },
+      });
+
+    gsap.from(q("footer"), {
+      y: 40,
+      duration: 1,
+      scrollTrigger: {
+        trigger: q("footer"),
+        start: "top 80%",
+        end: "top 50%",
+        scrub: 1
+      },
     });
   }, []);
 
@@ -34,6 +176,15 @@ function Homepage() {
           </div>
         </header>
 
+        <svg
+          className="mobile"
+          width="42"
+          height="24"
+          viewBox="0 0 99.5 56.5"
+          fill="#fff"
+        >
+          <path d="M95.64,13.38A25.24,25.24,0,0,0,73.27,0H2.43A2.44,2.44,0,0,0,.72,4.16L16.15,19.68a7.26,7.26,0,0,0,5.15,2.14H71.24a6.44,6.44,0,1,1,.13,12.88H36.94a2.44,2.44,0,0,0-1.72,4.16L50.66,54.39a7.25,7.25,0,0,0,5.15,2.14H71.38c20.26,0,35.58-21.66,24.26-43.16"></path>
+        </svg>
         <h1>Restaurants and more, delivered to your door</h1>
 
         <input type="text" placeholder="Enter deliver address" />
